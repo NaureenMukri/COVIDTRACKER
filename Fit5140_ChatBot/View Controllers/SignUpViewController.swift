@@ -106,7 +106,7 @@ class SignUpViewController: UIViewController {
                         }
 
                     }
-                    
+                    self.performSegue(withIdentifier: "signupSegue", sender: nil)
 //                    back to home scrren
                     self.transitionToHome()
                 }

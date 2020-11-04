@@ -162,6 +162,7 @@
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="okL-1k-qpy" eventType="touchUpInside" id="3Oe-vi-cc5"/>
+                                            <segue destination="zks-Te-ed7" kind="show" identifier="signupSegue" id="oB7-1e-tcY"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9C-Xr-wo5">
@@ -223,6 +224,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fz8-3y-AXA"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ri9-zB-MdO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQ8-er-bcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
