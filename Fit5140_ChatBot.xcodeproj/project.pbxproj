@@ -3,22 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17F14E0E7CB33E160D73A492 /* Pods_Fit5140_ChatBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */; };
 		BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0732539B9DC0097DF0B /* AppDelegate.swift */; };
 		BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */; };
 		BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0772539B9DC0097DF0B /* ViewController.swift */; };
 		BE42B07B2539B9DC0097DF0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE42B0792539B9DC0097DF0B /* Main.storyboard */; };
 		BE42B07D2539B9E60097DF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE42B07C2539B9E60097DF0B /* Assets.xcassets */; };
 		BE42B0802539B9E60097DF0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE42B07E2539B9E60097DF0B /* LaunchScreen.storyboard */; };
-		E0526504340C8D76F397736A /* Pods_Fit5140_ChatBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FC7CC75B9BE29CA0C0E822 /* Pods_Fit5140_ChatBot.framework */; };
+		BE42B08A25517C780097DF0B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08925517C780097DF0B /* SignUpViewController.swift */; };
+		BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08B25517C860097DF0B /* LoginViewController.swift */; };
+		BE42B08E25517C990097DF0B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08D25517C990097DF0B /* HomeViewController.swift */; };
+		BE42B09025525B6B0097DF0B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08F25525B6B0097DF0B /* Utilities.swift */; };
+		BE42B092255260C70097DF0B /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B091255260C70097DF0B /* LandingViewController.swift */; };
+		BE42B09625526A800097DF0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE42B09525526A800097DF0B /* GoogleService-Info.plist */; };
+		BE42B098255291E40097DF0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B097255291E40097DF0B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D02BF88FCE7B39DB00B0A87 /* Pods-Fit5140_ChatBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit5140_ChatBot.release.xcconfig"; path = "Target Support Files/Pods-Fit5140_ChatBot/Pods-Fit5140_ChatBot.release.xcconfig"; sourceTree = "<group>"; };
-		98FC7CC75B9BE29CA0C0E822 /* Pods_Fit5140_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit5140_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit5140_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0702539B9DB0097DF0B /* Fit5140_ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit5140_ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0732539B9DC0097DF0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +34,13 @@
 		BE42B07C2539B9E60097DF0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE42B07F2539B9E60097DF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE42B0812539B9E60097DF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE42B08925517C780097DF0B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BE42B08B25517C860097DF0B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE42B08D25517C990097DF0B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BE42B08F25525B6B0097DF0B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		BE42B091255260C70097DF0B /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		BE42B09525526A800097DF0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE42B097255291E40097DF0B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C27080391A6517A7F2B8EA03 /* Pods-Fit5140_ChatBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit5140_ChatBot.debug.xcconfig"; path = "Target Support Files/Pods-Fit5140_ChatBot/Pods-Fit5140_ChatBot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0526504340C8D76F397736A /* Pods_Fit5140_ChatBot.framework in Frameworks */,
+				17F14E0E7CB33E160D73A492 /* Pods_Fit5140_ChatBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +59,7 @@
 		963652452617C7924C4E1B29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98FC7CC75B9BE29CA0C0E822 /* Pods_Fit5140_ChatBot.framework */,
+				BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,6 +85,8 @@
 		BE42B0722539B9DB0097DF0B /* Fit5140_ChatBot */ = {
 			isa = PBXGroup;
 			children = (
+				BE42B09525526A800097DF0B /* GoogleService-Info.plist */,
+				BE42B0882551795A0097DF0B /* View Controllers */,
 				BE42B0732539B9DC0097DF0B /* AppDelegate.swift */,
 				BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */,
 				BE42B0772539B9DC0097DF0B /* ViewController.swift */,
@@ -78,8 +94,21 @@
 				BE42B07C2539B9E60097DF0B /* Assets.xcassets */,
 				BE42B07E2539B9E60097DF0B /* LaunchScreen.storyboard */,
 				BE42B0812539B9E60097DF0B /* Info.plist */,
+				BE42B08F25525B6B0097DF0B /* Utilities.swift */,
+				BE42B097255291E40097DF0B /* Constants.swift */,
 			);
 			path = Fit5140_ChatBot;
+			sourceTree = "<group>";
+		};
+		BE42B0882551795A0097DF0B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE42B08925517C780097DF0B /* SignUpViewController.swift */,
+				BE42B08B25517C860097DF0B /* LoginViewController.swift */,
+				BE42B08D25517C990097DF0B /* HomeViewController.swift */,
+				BE42B091255260C70097DF0B /* LandingViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		D0A79E04863B9C75C34C82AB /* Pods */ = {
@@ -88,7 +117,6 @@
 				C27080391A6517A7F2B8EA03 /* Pods-Fit5140_ChatBot.debug.xcconfig */,
 				1D02BF88FCE7B39DB00B0A87 /* Pods-Fit5140_ChatBot.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE42B0802539B9E60097DF0B /* LaunchScreen.storyboard in Resources */,
+				BE42B09625526A800097DF0B /* GoogleService-Info.plist in Resources */,
 				BE42B07D2539B9E60097DF0B /* Assets.xcassets in Resources */,
 				BE42B07B2539B9DC0097DF0B /* Main.storyboard in Resources */,
 			);
@@ -209,7 +238,13 @@
 			files = (
 				BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */,
 				BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */,
+				BE42B092255260C70097DF0B /* LandingViewController.swift in Sources */,
+				BE42B09025525B6B0097DF0B /* Utilities.swift in Sources */,
+				BE42B08A25517C780097DF0B /* SignUpViewController.swift in Sources */,
+				BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */,
 				BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */,
+				BE42B08E25517C990097DF0B /* HomeViewController.swift in Sources */,
+				BE42B098255291E40097DF0B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
