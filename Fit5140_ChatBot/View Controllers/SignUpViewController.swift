@@ -98,14 +98,14 @@ class SignUpViewController: UIViewController {
                 }
                 else {
 //                    Store first and last name
-//                    let db = Firestore.firestore()
-//                    db.collection("users").addDocument(data: ["firstname" :firstName, "lastname" : lastName, "uid": result!.user.uid ]) { (error) in
-//
-//                        if error != nil {
-//                            self.showErrorMessage("User data unable to saved")
-//                        }
-//
-//                    }
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["firstname" :firstName, "lastname" : lastName, "uid": result!.user.uid ]) { (error) in
+
+                        if error != nil {
+                            self.showErrorMessage("User data unable to saved")
+                        }
+
+                    }
                     
 //                    back to home scrren
                     self.transitionToHome()
