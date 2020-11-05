@@ -106,7 +106,6 @@ class SignUpViewController: UIViewController {
                         }
 
                     }
-                    self.performSegue(withIdentifier: "signupSegue", sender: nil)
 //                    back to home scrren
                     self.transitionToHome()
                 }
@@ -116,11 +115,11 @@ class SignUpViewController: UIViewController {
     
     func transitionToHome() {
         
-        let landingViewController =
+        let homeViewController =
                 storyboard?.instantiateViewController(identifier:
-                    Constants.Storyboard.landingViewController) as? LandingViewController
+                    Constants.Storyboard.landingViewController) as? HomeViewController
         
-        view.window?.rootViewController = landingViewController
+        view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
         
         

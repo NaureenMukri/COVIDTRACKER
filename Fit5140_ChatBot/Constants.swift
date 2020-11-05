@@ -12,7 +12,7 @@ struct Constants {
     
     struct Storyboard {
         
-        static let landingViewController = "landingViewController"
+        static let landingViewController = "landingVC"
         
     }
 }

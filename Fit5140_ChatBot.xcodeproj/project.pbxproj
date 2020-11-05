@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		17F14E0E7CB33E160D73A492 /* Pods_Fit5140_ChatBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */; };
+		AB75AE672553C29E0018D378 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE662553C29E0018D378 /* TabItem.swift */; };
+		AB75AE6F2553C5C20018D378 /* NavigationBaseMenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE6E2553C5C20018D378 /* NavigationBaseMenuBarController.swift */; };
+		AB75AE712553C62E0018D378 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */; };
+		AB75AE732553F13E0018D378 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE722553F13E0018D378 /* MapViewController.swift */; };
+		AB75AE752553F7CE0018D378 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE742553F7CE0018D378 /* ProfileViewController.swift */; };
+		AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE762553F7E00018D378 /* SymptomViewController.swift */; };
 		BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0732539B9DC0097DF0B /* AppDelegate.swift */; };
 		BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */; };
 		BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0772539B9DC0097DF0B /* ViewController.swift */; };
@@ -25,6 +31,12 @@
 
 /* Begin PBXFileReference section */
 		1D02BF88FCE7B39DB00B0A87 /* Pods-Fit5140_ChatBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit5140_ChatBot.release.xcconfig"; path = "Target Support Files/Pods-Fit5140_ChatBot/Pods-Fit5140_ChatBot.release.xcconfig"; sourceTree = "<group>"; };
+		AB75AE662553C29E0018D378 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		AB75AE6E2553C5C20018D378 /* NavigationBaseMenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBaseMenuBarController.swift; sourceTree = "<group>"; };
+		AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
+		AB75AE722553F13E0018D378 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AB75AE742553F7CE0018D378 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AB75AE762553F7E00018D378 /* SymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomViewController.swift; sourceTree = "<group>"; };
 		BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit5140_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0702539B9DB0097DF0B /* Fit5140_ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit5140_ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0732539B9DC0097DF0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +100,9 @@
 				BE42B09525526A800097DF0B /* GoogleService-Info.plist */,
 				BE42B0882551795A0097DF0B /* View Controllers */,
 				BE42B0732539B9DC0097DF0B /* AppDelegate.swift */,
+				AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */,
 				BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */,
+				AB75AE662553C29E0018D378 /* TabItem.swift */,
 				BE42B0772539B9DC0097DF0B /* ViewController.swift */,
 				BE42B0792539B9DC0097DF0B /* Main.storyboard */,
 				BE42B07C2539B9E60097DF0B /* Assets.xcassets */,
@@ -105,8 +119,12 @@
 			children = (
 				BE42B08925517C780097DF0B /* SignUpViewController.swift */,
 				BE42B08B25517C860097DF0B /* LoginViewController.swift */,
+				AB75AE6E2553C5C20018D378 /* NavigationBaseMenuBarController.swift */,
 				BE42B08D25517C990097DF0B /* HomeViewController.swift */,
 				BE42B091255260C70097DF0B /* LandingViewController.swift */,
+				AB75AE722553F13E0018D378 /* MapViewController.swift */,
+				AB75AE742553F7CE0018D378 /* ProfileViewController.swift */,
+				AB75AE762553F7E00018D378 /* SymptomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -239,12 +257,18 @@
 				BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */,
 				BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */,
 				BE42B092255260C70097DF0B /* LandingViewController.swift in Sources */,
+				AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */,
 				BE42B09025525B6B0097DF0B /* Utilities.swift in Sources */,
+				AB75AE752553F7CE0018D378 /* ProfileViewController.swift in Sources */,
 				BE42B08A25517C780097DF0B /* SignUpViewController.swift in Sources */,
 				BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */,
+				AB75AE6F2553C5C20018D378 /* NavigationBaseMenuBarController.swift in Sources */,
 				BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */,
 				BE42B08E25517C990097DF0B /* HomeViewController.swift in Sources */,
+				AB75AE672553C29E0018D378 /* TabItem.swift in Sources */,
 				BE42B098255291E40097DF0B /* Constants.swift in Sources */,
+				AB75AE732553F13E0018D378 /* MapViewController.swift in Sources */,
+				AB75AE712553C62E0018D378 /* TabNavigationMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

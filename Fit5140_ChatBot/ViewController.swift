@@ -20,6 +20,7 @@ class ViewController: UIViewController, AWSLexInteractionDelegate, UITextFieldDe
         
         setUpTextField()
         setUpLex()
+        
     }
     func setUpLex() {
         self.interactionKit = AWSLexInteractionKit.init(forKey: "chatConfig")
