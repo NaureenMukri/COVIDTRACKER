@@ -117,7 +117,7 @@ class SignUpViewController: UIViewController {
         
         let homeViewController =
                 storyboard?.instantiateViewController(identifier:
-                    Constants.Storyboard.landingViewController) as? HomeViewController
+                    Constants.Storyboard.landingViewController) as? TabMenuViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()

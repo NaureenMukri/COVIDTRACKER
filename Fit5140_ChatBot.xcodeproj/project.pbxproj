@@ -14,6 +14,7 @@
 		AB75AE732553F13E0018D378 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE722553F13E0018D378 /* MapViewController.swift */; };
 		AB75AE752553F7CE0018D378 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE742553F7CE0018D378 /* ProfileViewController.swift */; };
 		AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE762553F7E00018D378 /* SymptomViewController.swift */; };
+		ABDAF7EA2554FFA30026801A /* TabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */; };
 		BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0732539B9DC0097DF0B /* AppDelegate.swift */; };
 		BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */; };
 		BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0772539B9DC0097DF0B /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		AB75AE722553F13E0018D378 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB75AE742553F7CE0018D378 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AB75AE762553F7E00018D378 /* SymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomViewController.swift; sourceTree = "<group>"; };
+		ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuViewController.swift; sourceTree = "<group>"; };
 		BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit5140_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0702539B9DB0097DF0B /* Fit5140_ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit5140_ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0732539B9DC0097DF0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				AB75AE722553F13E0018D378 /* MapViewController.swift */,
 				AB75AE742553F7CE0018D378 /* ProfileViewController.swift */,
 				AB75AE762553F7E00018D378 /* SymptomViewController.swift */,
+				ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */,
+				ABDAF7EA2554FFA30026801A /* TabMenuViewController.swift in Sources */,
 				BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */,
 				BE42B092255260C70097DF0B /* LandingViewController.swift in Sources */,
 				AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */,

@@ -123,16 +123,17 @@
             </objects>
             <point key="canvasLocation" x="3174" y="577"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Menu View Controller-->
         <scene sceneID="yBv-dK-wQQ">
             <objects>
-                <tabBarController id="0K7-5x-GcL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="landingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0K7-5x-GcL" customClass="TabMenuViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jk2-Yp-FVk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="TabMenu" destination="Jk2-Yp-FVk" id="Fgd-Te-APT"/>
                         <segue destination="zsg-j6-lSH" kind="relationship" relationship="viewControllers" id="f80-Rf-8Ni"/>
                         <segue destination="hG0-td-9s0" kind="relationship" relationship="viewControllers" id="HNj-MM-VzB"/>
                         <segue destination="rTj-ti-p9f" kind="relationship" relationship="viewControllers" id="rf9-sM-sdE"/>
@@ -403,7 +404,7 @@
         <!--Home View Controller-->
         <scene sceneID="8SS-U3-fbI">
             <objects>
-                <viewController storyboardIdentifier="landingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9No-DO-UZW" customClass="HomeViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9No-DO-UZW" customClass="HomeViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s9R-lO-qvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,6 +416,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peM-xW-lmJ">
+                                <rect key="frame" x="184" y="501" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c9q-kg-Sqb"/>
