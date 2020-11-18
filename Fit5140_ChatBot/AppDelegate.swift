@@ -14,7 +14,9 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    
+    var databaseController: DatabaseProtocol?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -26,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //change "botBot" to the name of your Lex bot
         let chatConfig =  AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: "botBot", botAlias: "$LATEST")
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "chatConfig")
+        
+        databaseController = FirebaseController()
         
         FirebaseApp.configure()
         
