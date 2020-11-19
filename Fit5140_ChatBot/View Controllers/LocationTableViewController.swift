@@ -8,46 +8,70 @@
 
 import UIKit
 
-class LocationTableViewController: UITableViewController {
+class LocationTableViewController: UITableViewController, DatabaseListener {
+    
+
+    let CELL_LOCATION = "locationCell"
+    
+    var listenerType: ListenerType = .location
+    var allLocations: [Location] = []
+    var databaseController: DatabaseProtocol?
+    var firebaseController: FirebaseController?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allLocations.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let locationcell = tableView.dequeueReusableCell(withIdentifier: CELL_LOCATION, for: indexPath)
+        let location = allLocations[indexPath.row]
+        
+        locationcell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        locationcell.textLabel?.text = location.name
+        locationcell.detailTextLabel?.text = location.time
         
         
 
         // Configure the cell...
 
-        return cell
+        return locationcell
     }
     
-    //MARK:- Database Listener
-    
-//    func onLocationChange(change: DatabaseChange, locations: [Location]) {
-//
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 
     
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -62,17 +86,18 @@ class LocationTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            allLocations.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
@@ -88,6 +113,12 @@ class LocationTableViewController: UITableViewController {
         return true
     }
     */
+    
+    //MARK:- Database Listener
+    
+    func onLocationChange(change: DatabaseChange, locations: [Location]) {
+        allLocations = locations
+    }
 
     /*
     // MARK: - Navigation
