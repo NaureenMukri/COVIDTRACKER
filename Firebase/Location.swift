@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MapKit
 
 class Location: NSObject, Decodable, Encodable {
-    
+   
     var id: String?
     var name: String?
     var date: String?

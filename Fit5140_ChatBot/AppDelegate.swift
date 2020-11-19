@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var databaseController: DatabaseProtocol?
-
-
+    
+    override init() {
+       // Firebase Init
+       FirebaseApp.configure()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //replace the XXXXXs with your own id
@@ -30,9 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "chatConfig")
         
         databaseController = FirebaseController()
-        
-        FirebaseApp.configure()
-        
         return true
     }
 

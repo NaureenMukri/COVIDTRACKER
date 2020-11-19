@@ -32,19 +32,27 @@ class LocationTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    }
+    //MARK:- Database Listener
     
+//    func onLocationChange(change: DatabaseChange, locations: [Location]) {
+//
+//    }
+
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    }
+//
 
     /*
     // Override to support conditional editing of the table view.

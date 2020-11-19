@@ -330,6 +330,9 @@
                         <viewLayoutGuide key="safeArea" id="K0Q-Fj-6pA"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Locations" id="KFQ-bY-GPn"/>
+                    <connections>
+                        <outlet property="mapView" destination="AZn-O3-s9k" id="AlU-pi-Nja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8I-Ge-U6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

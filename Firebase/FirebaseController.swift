@@ -14,8 +14,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirebaseController: NSObject, DatabaseProtocol {
-
-    var defaultLocation: Location
+    
     var listeners = MulticastDelegate<DatabaseListener>()
     var authController: Auth
     var database: Firestore
@@ -25,19 +24,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
     override init() {
         // To use Firebase in our application we first must run the
         // FirebaseApp configure method
-        FirebaseApp.configure()
-        // We call auth and firestore to get access to these frameworks authController = Auth.auth()
+        // We call auth and firestore to get access to these frameworks
+        authController = Auth.auth()
         database = Firestore.firestore()
         locationList = [Location]()
         super.init()
         // This will START THE PROCESS of signing in with an anonymous account // The closure will not execute until its recieved a message back which can be // any time later
-        authController.signInAnonymously() { (authResult, error) in
-            guard authResult != nil else {
-                fatalError("Firebase authentication failed") }
+//        authController.signInAnonymously() { (authResult, error) in
+//            guard authResult != nil else {
+//                fatalError("Firebase authentication failed") }
             // Once we have authenticated we can attach our listeners to // the firebase firestore
             self.setUpLocationListener()
         }
-    }
     
     func setUpLocationListener() {
         locationRef = database.collection("locations")
@@ -47,6 +45,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             self.parseLocationsSnapshot(snapshot: querySnapshot)
+        }
     }
         
         func parseLocationsSnapshot(snapshot: QuerySnapshot) {
@@ -76,19 +75,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     let index = getLocationIndexById(locationID)!
                     locationList[index] = location
                 } else if change.type == .removed {
-                    if let index = getLocationById(locationID) {
-                    locationList.remove(at: index)
+                    if let index = getLocationIndexById(locationID) {
+                        locationList.remove(at: index)
                 }
             }
-        }
         
         listeners.invoke {(listener) in
             if listener.listenerType == ListenerType.location {
                 listener.onLocationChange(change: .update, locations: locationList)
             }
         }
-    }
-        
+        }
+        }
         
     // MARK:- Utility Functions
 
@@ -107,6 +105,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             return nil
         }
+        
+    // MARK:- Required Database Functions
     
     func cleanup() {
         
@@ -151,4 +151,4 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
 }
-}
+

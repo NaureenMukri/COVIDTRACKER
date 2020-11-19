@@ -17,6 +17,7 @@ import Foundation
 enum ListenerType {
     case location
     case symptoms
+    
 }
 
 protocol DatabaseListener: AnyObject {
@@ -26,7 +27,6 @@ protocol DatabaseListener: AnyObject {
 
 protocol DatabaseProtocol: AnyObject {
     
-    var defaultLocation: Location {get}
     func cleanup()
     func addLocation(id: String, name: String, date: String, time: String, lat: Double, long: Double) -> Location
     func deleteLocation(location: Location)
