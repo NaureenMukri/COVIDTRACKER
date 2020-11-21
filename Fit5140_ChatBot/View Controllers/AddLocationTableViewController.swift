@@ -10,6 +10,10 @@ import UIKit
 
 class AddLocationTableViewController: UITableViewController {
     
+    
+    let SECTION_LOCATION_DETAILS = 0
+    let SECTION_VISIT = 1
+    
 
     @IBOutlet weak var locationNameTextField: UITextField!
     
@@ -30,6 +34,12 @@ class AddLocationTableViewController: UITableViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
+        
+        locationNameTextField.setBottomBorderOnlyWith(color: UIColor.gray.cgColor)
+        latTextField.setBottomBorderOnlyWith(color: UIColor.gray.cgColor)
+        longTextField.setBottomBorderOnlyWith(color: UIColor.gray.cgColor)
+        dateTextField.setBottomBorderOnlyWith(color: UIColor.gray.cgColor)
+        timeTextField.setBottomBorderOnlyWith(color: UIColor.gray.cgColor)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,12 +53,16 @@ class AddLocationTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        if section == SECTION_LOCATION_DETAILS {
+            return 5
+        }
+        
+        return 2
     }
 
     @IBAction func saveLocation(_ sender: Any) {
@@ -64,6 +78,35 @@ class AddLocationTableViewController: UITableViewController {
               return
     }
         
+        var errorMessage = "Please ensure all the fields are filled"
+        
+        
+        if locationNameTextField.text == "" {
+            locationNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+        }
+        if latTextField.text == "" {
+            latTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+        }
+        if longTextField.text == "" {
+                longTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+        }
+        if dateTextField.text == "" {
+           dateTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+        }
+        if timeTextField.text == "" {
+            timeTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+        }
+        
+        displayMessage(title: "Fields Invalid/Empty", message: errorMessage)
+    }
+    
+    func displayMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style:
+            UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -121,4 +164,42 @@ class AddLocationTableViewController: UITableViewController {
 
 }
 
+//MARK:- UITextView Extensions
+
+// To change the appearance of the UITextField based on their respective validations
+
+// When save button is clicked without any validation errors
+
+extension UITextField {
+    func setBottomBorderOnlyWith(color: CGColor) {
+        self.borderStyle = .none
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    }
 }
+
+// When save button is clicked to save location but fields are invalid
+
+extension UITextField {
+    func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
+        animation.fromValue = baseColor
+        animation.toValue = UIColor.red.cgColor
+        animation.duration = 0.4
+        if revert { animation.autoreverses = true } else { animation.autoreverses = false }
+        self.layer.add(animation, forKey: "")
+
+        let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.07
+        shake.repeatCount = shakes
+        if revert { shake.autoreverses = true  } else { shake.autoreverses = false }
+        shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(shake, forKey: "position")
+    }
+}
+
+
