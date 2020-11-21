@@ -28,7 +28,7 @@ protocol DatabaseListener: AnyObject {
 protocol DatabaseProtocol: AnyObject {
     
     func cleanup()
-    func addLocation(id: String, name: String, date: String, time: String, lat: Double, long: Double) -> Location
+    func addLocation(name: String, date: String, time: String, lat: Double, long: Double) -> Location
     func deleteLocation(location: Location)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)

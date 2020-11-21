@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17F14E0E7CB33E160D73A492 /* Pods_Fit5140_ChatBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */; };
+		AB06F2C025677436004C3E81 /* AddLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06F2BF25677436004C3E81 /* AddLocationTableViewController.swift */; };
 		AB14CE1D25623C9A009EE4D9 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1C25623C9A009EE4D9 /* LocationTableViewController.swift */; };
 		AB14CE202562BFFE009EE4D9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1F2562BFFE009EE4D9 /* Location.swift */; };
 		AB14CE2225641F13009EE4D9 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE2125641F13009EE4D9 /* FirebaseController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1D02BF88FCE7B39DB00B0A87 /* Pods-Fit5140_ChatBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fit5140_ChatBot.release.xcconfig"; path = "Target Support Files/Pods-Fit5140_ChatBot/Pods-Fit5140_ChatBot.release.xcconfig"; sourceTree = "<group>"; };
+		AB06F2BF25677436004C3E81 /* AddLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewController.swift; sourceTree = "<group>"; };
 		AB14CE1C25623C9A009EE4D9 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 		AB14CE1F2562BFFE009EE4D9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		AB14CE2125641F13009EE4D9 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */,
 				AB14CE1C25623C9A009EE4D9 /* LocationTableViewController.swift */,
 				AB4DCB2E25651B1A005B0B70 /* MapViewController.swift */,
+				AB06F2BF25677436004C3E81 /* AddLocationTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */,
 				AB75AE6F2553C5C20018D378 /* NavigationBaseMenuBarController.swift in Sources */,
 				BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */,
+				AB06F2C025677436004C3E81 /* AddLocationTableViewController.swift in Sources */,
 				BE42B08E25517C990097DF0B /* HomeViewController.swift in Sources */,
 				BE42B098255291E40097DF0B /* Constants.swift in Sources */,
 				AB75AE712553C62E0018D378 /* TabNavigationMenu.swift in Sources */,

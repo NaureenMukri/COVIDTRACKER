@@ -112,7 +112,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     }
         
-    func addLocation(id: String, name: String, date: String, time: String, lat: Double, long: Double) -> Location {
+    func addLocation(name: String, date: String, time: String, lat: Double, long: Double) -> Location {
         let location = Location()
         location.name = name
         location.date = date
