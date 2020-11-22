@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//To add styling to the application we use this class to define the attributes of textFields, Labels and Button to make it effortless to maintain consistency. This is also used to validate the generic fields 
+
 class Utilities {
     
     static func styleTextField(_ textfield:UITextField) {
@@ -27,6 +29,7 @@ class Utilities {
         textfield.layer.addSublayer(bottomLine)
         
     }
+    
     
     static func styleFilledButton(_ button:UIButton) {
         
