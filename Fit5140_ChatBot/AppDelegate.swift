@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         //change "botBot" to the name of your Lex bot
-        let chatConfig =  AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: "botBot", botAlias: "$LATEST")
+        let chatConfig =  AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: "chatty", botAlias: "$LATEST")
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "chatConfig")
         
         databaseController = FirebaseController()
