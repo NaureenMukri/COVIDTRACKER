@@ -725,11 +725,11 @@
             </objects>
             <point key="canvasLocation" x="6102.898550724638" y="1915.8482142857142"/>
         </scene>
-        <!--Profile-->
+        <!--About US-->
         <scene sceneID="rHw-fr-jtU">
             <objects>
                 <navigationController id="hG0-td-9s0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="Q9d-MB-2Fy"/>
+                    <tabBarItem key="tabBarItem" title="About US" image="person" catalog="system" selectedImage="person" id="Q9d-MB-2Fy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ERi-RS-M8R">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -742,7 +742,7 @@
             </objects>
             <point key="canvasLocation" x="5386" y="860"/>
         </scene>
-        <!--Profile-->
+        <!--About Us-->
         <scene sceneID="w4g-ef-csL">
             <objects>
                 <viewController id="jIy-O9-Toq" customClass="ProfileViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
@@ -752,7 +752,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Uit-ed-1mN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="T82-Ug-QBQ"/>
+                    <navigationItem key="navigationItem" title="About Us" id="T82-Ug-QBQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3m-VE-X1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
