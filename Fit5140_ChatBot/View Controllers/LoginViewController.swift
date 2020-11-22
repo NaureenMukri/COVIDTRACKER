@@ -10,6 +10,9 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    
+    // Initialising Variables
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,6 +27,9 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    // Setting up the Elements of the Login Screen
     
     func setUpElements()
     {
@@ -45,6 +51,8 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Function to Log the user into the application using Firebase Authentication FireAuth
 
     @IBAction func loginClicked(_ sender: Any) {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)

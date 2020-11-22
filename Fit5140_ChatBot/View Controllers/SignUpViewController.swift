@@ -4,7 +4,9 @@
 //
 //  Created by Nivedita Tomar on 03/11/20.
 //  Copyright © 2020 Monash University. All rights reserved.
-//
+//  Reference : 1. https://www.youtube.com/watch?v=1HN7usMROt8&ab_channel=CodeWithChris
+
+// This is the Sign-Up Screen that provides the user with the option to provide in their authentication details so as to Register with the COVID Tracker Application
 
 import UIKit
 import FirebaseAuth
@@ -37,7 +39,10 @@ class SignUpViewController: UIViewController {
         Utilities.styleFilledButton(signUpButton)
     }
     
-    //fields check, if anything is wrong error message is returned
+    //MARK:- Validation and Exception Handling
+    
+    //Validating the fields for the user so that errors can be prevented while registering
+    
     func validateFields() -> String? {
         
         //empty field check
@@ -82,22 +87,23 @@ class SignUpViewController: UIViewController {
         }
         else {
             
-            //create cleaned var of data
+            // Storing the fields trimming the white spaces and new lines
             
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Creating the user with the email and password provided through Firebase Authentication
 
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
                 // Check for errors
                 if err != nil {
-//                    err?.localizedDescription
                     self.showErrorMessage("Error creating the user")
                 }
                 else {
-//                    Store first and last name
+//              Storing first and last name of the user through Firestore
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["firstname" :firstName, "lastname" : lastName, "uid": result!.user.uid ]) { (error) in
 
@@ -106,12 +112,14 @@ class SignUpViewController: UIViewController {
                         }
 
                     }
-//                    back to home scrren
+                    // After successfully signing up as a user - the user is taken to the Home Screen of the COVID Tracker app
                     self.transitionToHome()
                 }
             }
         }
     }
+    
+    // Function to transition the user to the Home Page of the application after successfull applications
     
     func transitionToHome() {
         
@@ -124,6 +132,8 @@ class SignUpViewController: UIViewController {
         
         
     }
+    
+    // Function to display Errors
     
     func showErrorMessage(_ message: String) {
         

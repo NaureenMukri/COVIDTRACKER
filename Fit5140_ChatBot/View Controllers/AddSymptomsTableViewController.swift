@@ -4,7 +4,9 @@
 //
 //  Created by Naureen Mukri on 22/11/20.
 //  Copyright © 2020 Monash University. All rights reserved.
-//
+//  References : 1. https://stackoverflow.com/questions/37118812/how-to-make-checklist-in-uitableview-swift
+// 2. https://stackoverflow.com/questions/36513969/check-uncheck-the-check-box-by-tapping-the-cell-in-table-view-and-how-to-know
+// 3. https://stackoverflow.com/questions/39513258/get-current-date-in-swift-3/39514533
 
 
 import UIKit
@@ -88,6 +90,8 @@ class AddSymptomsTableViewController: UITableViewController {
         return symptomCell
     }
     
+    // Adding selected Symptoms to the Symptoms List
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_FEELING {
             selectedFeeling = feelings[indexPath.row]
@@ -110,7 +114,7 @@ class AddSymptomsTableViewController: UITableViewController {
         
     }
 
-    // Function to save Symptoms
+    // Function to save selected Feeling and Symptoms
 
     @IBAction func saveSymptoms(_ sender: Any) {
         

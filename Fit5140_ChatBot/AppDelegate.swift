@@ -23,14 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        FirebaseApp.configure()
     }
     
+    // Initialising the connection of Firebase and AWS
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //replace the XXXXXs with your own id
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:1d8c274c-d018-453e-93f3-c3b4decf8185")
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
-        //change "botBot" to the name of your Lex bot
-        let chatConfig =  AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: "botBot", botAlias: "$LATEST")
+        //connecting to the bot by defining the name of your Lex bot used to set up the bot
+        let chatConfig =  AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: "chatty", botAlias: "$LATEST")
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "chatConfig")
         
         databaseController = FirebaseController()

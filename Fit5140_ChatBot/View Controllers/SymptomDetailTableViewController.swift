@@ -10,6 +10,8 @@ import UIKit
 
 class SymptomDetailTableViewController: UITableViewController {
     
+    // 
+    
     var selectedSymptom = Symptoms()
     var selectedSymptomList: [String] = []
     var selectedFeeling: String?
