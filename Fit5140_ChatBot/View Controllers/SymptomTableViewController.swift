@@ -1,42 +1,29 @@
 //
-//  LocationTableViewController.swift
+//  SymptomTableViewController.swift
 //  Fit5140_ChatBot
 //
-//  Created by Naureen Mukri on 16/11/20.
+//  Created by Naureen Mukri on 22/11/20.
 //  Copyright © 2020 Monash University. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class LocationTableViewController: UITableViewController, DatabaseListener {
-
-
-    let CELL_LOCATION = "locationCell"
+class SymptomTableViewController: UITableViewController, DatabaseListener {
     
-    weak var mapViewController: MapViewController?
-    var listenerType: ListenerType = .location
-    var allLocations: [Location] = []
+    let CELL_SYMPTOM = "historyCell"
+    
+    var listenerType: ListenerType = .symptoms
+    var allSymptoms: [Symptoms] = []
     var databaseController: DatabaseProtocol?
     var firebaseController: FirebaseController?
-    
-    
-    func getData() {
-        let storedLocations = allLocations
-            var annotations = [LocationAnnotation]()
-            for storedLocation in storedLocations {
-                let newAnnotation = LocationAnnotation(id: storedLocation.id!, title: storedLocation.name!, subtitle: storedLocation.date!, lat: storedLocation.lat!, long: storedLocation.long!)
-                annotations.append(newAnnotation)
-            }
-            mapViewController?.mapView.addAnnotations(annotations)
-    }
-    
+    var selectedSymptom = Symptoms()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,7 +31,7 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    //MARK:- Database Listener
+    //MARK:- Database Listeners
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,18 +44,15 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
     }
     
     func onLocationChange(change: DatabaseChange, locations: [Location]) {
-        allLocations = locations
+        
     }
     
     func onSymptomChange(change: DatabaseChange, symptoms: [Symptoms]) {
+        allSymptoms = symptoms
     }
-
+    
+    
     // MARK: - Table view data source
-    
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Places you have been to:"
-    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -77,35 +61,50 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allLocations.count
+        return allSymptoms.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let locationCell = tableView.dequeueReusableCell(withIdentifier: CELL_LOCATION, for: indexPath)
-        let location = allLocations[indexPath.row]
+        let symptomCell = tableView.dequeueReusableCell(withIdentifier: CELL_SYMPTOM, for: indexPath)
         
-        locationCell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        locationCell.textLabel?.text = location.name
-        locationCell.detailTextLabel?.text = location.time
-    
+        let symptom = allSymptoms[indexPath.row]
+        
+        symptomCell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        symptomCell.textLabel?.text = symptom.feeling
+        symptomCell.detailTextLabel?.text = symptom.date
 
         // Configure the cell...
 
-        return locationCell
+        return symptomCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedLocation = self.allLocations[indexPath.row]
-        let locationAnnotation = LocationAnnotation(id: selectedLocation.id!, title: selectedLocation.name!, subtitle: selectedLocation.date!, lat: selectedLocation.lat!, long: selectedLocation.long!)
-        mapViewController?.mapView.addAnnotation(locationAnnotation)
-        mapViewController?.focusOn(annotation: locationAnnotation)
+        selectedSymptom = allSymptoms[indexPath.row]
+        performSegue(withIdentifier: "symptomDetailSegue", sender: self)
+        
     }
-
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Your Record History: "
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+//        headerView.backgroundColor = UIColor.yellow
+//        let label = UILabel()
+//        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+//        label.text = "Notification Times"
+//        label.textColor = UIColor.secondaryLabel
+//
+//        headerView.addSubview(label)
+//
+//        return headerView
 //    }
 //
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 30
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -115,18 +114,17 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            allLocations.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -142,16 +140,20 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
         return true
     }
     */
-    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "symptomDetailSegue" {
+            let destination = segue.destination as! SymptomDetailTableViewController
+            destination.selectedSymptom = selectedSymptom
+            
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

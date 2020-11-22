@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MapKit
 
 class Location: NSObject, Decodable, Encodable {
    

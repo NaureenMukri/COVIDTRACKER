@@ -15,16 +15,22 @@
 		AB14CE24256424DA009EE4D9 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE23256424DA009EE4D9 /* DatabaseController.swift */; };
 		AB14CE2625642C99009EE4D9 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE2525642C99009EE4D9 /* MulticastDelegate.swift */; };
 		AB4DCB2F25651B1A005B0B70 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DCB2E25651B1A005B0B70 /* MapViewController.swift */; };
+		AB53BC8F2568C68900B8F2DC /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53BC8E2568C68900B8F2DC /* LocationAnnotation.swift */; };
+		AB53BC912569CFA200B8F2DC /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53BC902569CFA200B8F2DC /* Symptoms.swift */; };
+		AB53BC932569D4E100B8F2DC /* SymptomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53BC922569D4E100B8F2DC /* SymptomTableViewController.swift */; };
+		AB53BC952569D76000B8F2DC /* AddSymptomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53BC942569D76000B8F2DC /* AddSymptomsTableViewController.swift */; };
+		AB6CA0682569E3CE000B7021 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6CA0672569E3CE000B7021 /* CheckableTableViewCell.swift */; };
+		AB6CA06A256A414F000B7021 /* MultipleCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6CA069256A414F000B7021 /* MultipleCheckTableViewCell.swift */; };
 		AB75AE6F2553C5C20018D378 /* NavigationBaseMenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE6E2553C5C20018D378 /* NavigationBaseMenuBarController.swift */; };
 		AB75AE712553C62E0018D378 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */; };
 		AB75AE752553F7CE0018D378 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE742553F7CE0018D378 /* ProfileViewController.swift */; };
-		AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75AE762553F7E00018D378 /* SymptomViewController.swift */; };
+		AB8B2114256A55F8001C4DF4 /* SymptomDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2113256A55F8001C4DF4 /* SymptomDetailTableViewController.swift */; };
+		AB8B2116256A6AF0001C4DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8B2115256A6AF0001C4DF4 /* Assets.xcassets */; };
 		ABDAF7EA2554FFA30026801A /* TabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */; };
 		BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0732539B9DC0097DF0B /* AppDelegate.swift */; };
 		BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */; };
 		BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B0772539B9DC0097DF0B /* ViewController.swift */; };
 		BE42B07B2539B9DC0097DF0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE42B0792539B9DC0097DF0B /* Main.storyboard */; };
-		BE42B07D2539B9E60097DF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE42B07C2539B9E60097DF0B /* Assets.xcassets */; };
 		BE42B0802539B9E60097DF0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE42B07E2539B9E60097DF0B /* LaunchScreen.storyboard */; };
 		BE42B08A25517C780097DF0B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08925517C780097DF0B /* SignUpViewController.swift */; };
 		BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42B08B25517C860097DF0B /* LoginViewController.swift */; };
@@ -44,10 +50,17 @@
 		AB14CE23256424DA009EE4D9 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		AB14CE2525642C99009EE4D9 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		AB4DCB2E25651B1A005B0B70 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AB53BC8E2568C68900B8F2DC /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		AB53BC902569CFA200B8F2DC /* Symptoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
+		AB53BC922569D4E100B8F2DC /* SymptomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewController.swift; sourceTree = "<group>"; };
+		AB53BC942569D76000B8F2DC /* AddSymptomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptomsTableViewController.swift; sourceTree = "<group>"; };
+		AB6CA0672569E3CE000B7021 /* CheckableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckableTableViewCell.swift; sourceTree = "<group>"; };
+		AB6CA069256A414F000B7021 /* MultipleCheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCheckTableViewCell.swift; sourceTree = "<group>"; };
 		AB75AE6E2553C5C20018D378 /* NavigationBaseMenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBaseMenuBarController.swift; sourceTree = "<group>"; };
 		AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
 		AB75AE742553F7CE0018D378 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		AB75AE762553F7E00018D378 /* SymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomViewController.swift; sourceTree = "<group>"; };
+		AB8B2113256A55F8001C4DF4 /* SymptomDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomDetailTableViewController.swift; sourceTree = "<group>"; };
+		AB8B2115256A6AF0001C4DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuViewController.swift; sourceTree = "<group>"; };
 		BA110FEED700C52471AA0CB0 /* Pods_Fit5140_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fit5140_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE42B0702539B9DB0097DF0B /* Fit5140_ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit5140_ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +68,6 @@
 		BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE42B0772539B9DC0097DF0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE42B07A2539B9DC0097DF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE42B07C2539B9E60097DF0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE42B07F2539B9E60097DF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE42B0812539B9E60097DF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE42B08925517C780097DF0B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +107,7 @@
 				AB14CE2125641F13009EE4D9 /* FirebaseController.swift */,
 				AB14CE23256424DA009EE4D9 /* DatabaseController.swift */,
 				AB14CE2525642C99009EE4D9 /* MulticastDelegate.swift */,
+				AB53BC902569CFA200B8F2DC /* Symptoms.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -102,6 +115,7 @@
 		BE42B0672539B9DB0097DF0B = {
 			isa = PBXGroup;
 			children = (
+				AB53BC8E2568C68900B8F2DC /* LocationAnnotation.swift */,
 				AB14CE1E2562BFBD009EE4D9 /* Firebase */,
 				BE42B0722539B9DB0097DF0B /* Fit5140_ChatBot */,
 				BE42B0712539B9DB0097DF0B /* Products */,
@@ -126,12 +140,11 @@
 				BE42B0732539B9DC0097DF0B /* AppDelegate.swift */,
 				AB75AE702553C62E0018D378 /* TabNavigationMenu.swift */,
 				BE42B0752539B9DC0097DF0B /* SceneDelegate.swift */,
-				BE42B0772539B9DC0097DF0B /* ViewController.swift */,
 				BE42B0792539B9DC0097DF0B /* Main.storyboard */,
-				BE42B07C2539B9E60097DF0B /* Assets.xcassets */,
 				BE42B07E2539B9E60097DF0B /* LaunchScreen.storyboard */,
 				BE42B0812539B9E60097DF0B /* Info.plist */,
 				BE42B08F25525B6B0097DF0B /* Utilities.swift */,
+				AB8B2115256A6AF0001C4DF4 /* Assets.xcassets */,
 				BE42B097255291E40097DF0B /* Constants.swift */,
 			);
 			path = Fit5140_ChatBot;
@@ -146,11 +159,16 @@
 				BE42B08D25517C990097DF0B /* HomeViewController.swift */,
 				BE42B091255260C70097DF0B /* LandingViewController.swift */,
 				AB75AE742553F7CE0018D378 /* ProfileViewController.swift */,
-				AB75AE762553F7E00018D378 /* SymptomViewController.swift */,
 				ABDAF7E92554FFA30026801A /* TabMenuViewController.swift */,
 				AB14CE1C25623C9A009EE4D9 /* LocationTableViewController.swift */,
 				AB4DCB2E25651B1A005B0B70 /* MapViewController.swift */,
 				AB06F2BF25677436004C3E81 /* AddLocationTableViewController.swift */,
+				AB53BC922569D4E100B8F2DC /* SymptomTableViewController.swift */,
+				BE42B0772539B9DC0097DF0B /* ViewController.swift */,
+				AB53BC942569D76000B8F2DC /* AddSymptomsTableViewController.swift */,
+				AB6CA0672569E3CE000B7021 /* CheckableTableViewCell.swift */,
+				AB6CA069256A414F000B7021 /* MultipleCheckTableViewCell.swift */,
+				AB8B2113256A55F8001C4DF4 /* SymptomDetailTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -226,7 +244,7 @@
 			files = (
 				BE42B0802539B9E60097DF0B /* LaunchScreen.storyboard in Resources */,
 				BE42B09625526A800097DF0B /* GoogleService-Info.plist in Resources */,
-				BE42B07D2539B9E60097DF0B /* Assets.xcassets in Resources */,
+				AB8B2116256A6AF0001C4DF4 /* Assets.xcassets in Resources */,
 				BE42B07B2539B9DC0097DF0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,21 +301,27 @@
 				AB14CE2225641F13009EE4D9 /* FirebaseController.swift in Sources */,
 				BE42B0782539B9DC0097DF0B /* ViewController.swift in Sources */,
 				ABDAF7EA2554FFA30026801A /* TabMenuViewController.swift in Sources */,
+				AB53BC952569D76000B8F2DC /* AddSymptomsTableViewController.swift in Sources */,
 				AB4DCB2F25651B1A005B0B70 /* MapViewController.swift in Sources */,
+				AB53BC912569CFA200B8F2DC /* Symptoms.swift in Sources */,
+				AB6CA06A256A414F000B7021 /* MultipleCheckTableViewCell.swift in Sources */,
 				BE42B0742539B9DC0097DF0B /* AppDelegate.swift in Sources */,
 				BE42B092255260C70097DF0B /* LandingViewController.swift in Sources */,
 				AB14CE1D25623C9A009EE4D9 /* LocationTableViewController.swift in Sources */,
 				AB14CE202562BFFE009EE4D9 /* Location.swift in Sources */,
 				AB14CE2625642C99009EE4D9 /* MulticastDelegate.swift in Sources */,
-				AB75AE772553F7E00018D378 /* SymptomViewController.swift in Sources */,
+				AB53BC8F2568C68900B8F2DC /* LocationAnnotation.swift in Sources */,
+				AB8B2114256A55F8001C4DF4 /* SymptomDetailTableViewController.swift in Sources */,
 				BE42B09025525B6B0097DF0B /* Utilities.swift in Sources */,
 				AB14CE24256424DA009EE4D9 /* DatabaseController.swift in Sources */,
 				AB75AE752553F7CE0018D378 /* ProfileViewController.swift in Sources */,
 				BE42B08A25517C780097DF0B /* SignUpViewController.swift in Sources */,
+				AB53BC932569D4E100B8F2DC /* SymptomTableViewController.swift in Sources */,
 				BE42B08C25517C860097DF0B /* LoginViewController.swift in Sources */,
 				AB75AE6F2553C5C20018D378 /* NavigationBaseMenuBarController.swift in Sources */,
 				BE42B0762539B9DC0097DF0B /* SceneDelegate.swift in Sources */,
 				AB06F2C025677436004C3E81 /* AddLocationTableViewController.swift in Sources */,
+				AB6CA0682569E3CE000B7021 /* CheckableTableViewCell.swift in Sources */,
 				BE42B08E25517C990097DF0B /* HomeViewController.swift in Sources */,
 				BE42B098255291E40097DF0B /* Constants.swift in Sources */,
 				AB75AE712553C62E0018D378 /* TabNavigationMenu.swift in Sources */,

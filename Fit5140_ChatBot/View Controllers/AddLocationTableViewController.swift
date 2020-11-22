@@ -92,9 +92,11 @@ class AddLocationTableViewController: UITableViewController {
         }
         if dateTextField.text == "" {
            dateTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+            errorMessage +=  "- Please ensure the date is in DD/MM/YYYY format"
         }
         if timeTextField.text == "" {
             timeTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
+            errorMessage +=  "- Please ensure the date is in HH:MM (24-Hour Clock) format"
         }
         
         displayMessage(title: "Fields Invalid/Empty", message: errorMessage)

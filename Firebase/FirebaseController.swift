@@ -15,10 +15,14 @@ import FirebaseFirestoreSwift
 
 class FirebaseController: NSObject, DatabaseProtocol {
     
+    
+    
     var listeners = MulticastDelegate<DatabaseListener>()
     var authController: Auth
     var database: Firestore
     var locationRef: CollectionReference?
+    var symptomRef: CollectionReference?
+    var symptomList: [Symptoms]
     var locationList: [Location]
     
     override init() {
@@ -28,6 +32,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         authController = Auth.auth()
         database = Firestore.firestore()
         locationList = [Location]()
+        symptomList = [Symptoms]()
         super.init()
         // This will START THE PROCESS of signing in with an anonymous account // The closure will not execute until its recieved a message back which can be // any time later
 //        authController.signInAnonymously() { (authResult, error) in
@@ -35,6 +40,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
 //                fatalError("Firebase authentication failed") }
             // Once we have authenticated we can attach our listeners to // the firebase firestore
             self.setUpLocationListener()
+            self.setUpSymptomListener()
         }
     
     func setUpLocationListener() {
@@ -45,6 +51,17 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             self.parseLocationsSnapshot(snapshot: querySnapshot)
+        }
+    }
+    
+    func setUpSymptomListener() {
+        symptomRef = database.collection("symptoms")
+        symptomRef?.addSnapshotListener{(querySnapshot, error) in
+            guard let querySnapshot = querySnapshot else {
+                print("Error fetching symptoms: \(error!)")
+                return
+            }
+            self.parseSymptomSnapshot(snapshot: querySnapshot)
         }
     }
         
@@ -87,6 +104,48 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         }
         }
+    
+    
+    func parseSymptomSnapshot(snapshot: QuerySnapshot) {
+        snapshot.documentChanges.forEach { (change) in
+            let symptomID = change.document.documentID
+            print(symptomID)
+            
+            var parsedSymptom: Symptoms?
+            
+            do {
+                parsedSymptom = try change.document.data(as: Symptoms.self)
+            }
+            catch {
+                print("Unable to Decode Symptoms. Is the Symptom malformed?")
+                return
+            }
+            
+            guard let symptom = parsedSymptom else {
+            print("Document doesn't exist")
+            return
+            }
+            
+            symptom.id = symptomID
+            if change.type == .added {
+                symptomList.append(symptom)
+            } else if change.type == .modified {
+                let index = getSymptomIndexById(symptomID)!
+                symptomList[index] = symptom
+            } else if change.type == .removed {
+                if let index = getSymptomIndexById(symptomID) {
+                    symptomList.remove(at: index)
+            }
+        }
+    
+    listeners.invoke {(listener) in
+        if listener.listenerType == ListenerType.symptoms {
+            listener.onSymptomChange(change: .update, symptoms: symptomList)
+        }
+    }
+    }
+    }
+    
         
     // MARK:- Utility Functions
 
@@ -101,6 +160,23 @@ class FirebaseController: NSObject, DatabaseProtocol {
             for location in locationList {
                 if location.id == id {
                     return location
+                }
+            }
+            return nil
+        }
+    
+    
+        func getSymptomIndexById(_ id: String) -> Int? {
+            if let symptom = getSymptomById(id) {
+                return symptomList.firstIndex(of: symptom)
+            }
+            return nil
+        }
+    
+        func getSymptomById(_ id: String) -> Symptoms? {
+            for symptom in symptomList {
+                if symptom.id == id {
+                    return symptom
                 }
             }
             return nil
@@ -138,11 +214,38 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
     }
     
+    func addSymptoms(date: String, feeling: String, symptoms: [String]) -> Symptoms {
+        let symptom = Symptoms()
+        symptom.date = date
+        symptom.feeling = feeling
+        symptom.symptoms = symptoms
+        
+        do {
+            if let symRef = try symptomRef?.addDocument(from: symptom) {
+                symptom.id = symRef.documentID
+            }
+        }
+        catch {
+            print("Failed to serialize Symptom")
+        }
+        return symptom
+    }
+    
+    func deleteSymptoms(symptom: Symptoms) {
+        if let symptomId = symptom.id {
+            symptomRef?.document(symptomId).delete()
+        }
+    }
+    
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
         
         if listener.listenerType == ListenerType.location {
             listener.onLocationChange(change: .update, locations: locationList)
+        }
+        
+        if listener.listenerType == ListenerType.symptoms {
+            listener.onSymptomChange(change: .update, symptoms: symptomList)
         }
     }
     

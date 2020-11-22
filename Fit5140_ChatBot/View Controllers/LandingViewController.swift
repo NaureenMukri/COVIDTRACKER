@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    let locationManager = CLLocationManager()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
 
         // Do any additional setup after loading the view.
         setUpElements()
+        
     }
     
     func setUpElements()
