@@ -730,21 +730,84 @@
             </objects>
             <point key="canvasLocation" x="5386" y="860"/>
         </scene>
-        <!--Profile-->
+        <!--About This App-->
         <scene sceneID="w4g-ef-csL">
             <objects>
                 <viewController id="jIy-O9-Toq" customClass="ProfileViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Hm-rX-7qv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-Sf-kE6">
+                                <rect key="frame" x="20" y="108" width="374" height="381"/>
+                                <color key="backgroundColor" red="0.37569138407707214" green="0.86399048566818237" blue="0.84308594465255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="381" id="bGG-O4-Ips"/>
+                                </constraints>
+                                <mutableString key="text">The application is named “COVID Tracker” and it will help the users keep track of their physical, mental and emotional state – providing self-tracking ability to do so.  This application combines the voice-enabled ability of AI assistant along with the capture and storage of symptoms, moods and locations of a person. This is an all-inclusive app customised to help users tackle the current coronavirus situation.
+It makes the experience of tracking more human-like and easier by incorporating a conversation with the voice assistant. Also, tracking makes it easier for the user to know how he/she is feeling at a definite time and helps to improve the overall mental health of the user.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Developers: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="csu-9v-wlc">
+                                <rect key="frame" x="20" y="509" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="rUA-ME-nQV"/>
+                                </constraints>
+                                <color key="textColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naureen Mukri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQi-7I-0kk">
+                                <rect key="frame" x="28" y="559" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivedita Tomar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-oD-2pf">
+                                <rect key="frame" x="28" y="588" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact: nmuk0004@student.monash.edu        " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaY-GY-W93">
+                                <rect key="frame" x="0.0" y="727" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.81326675415039062" green="0.68690872192382812" blue="0.23210373520851135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4bQ-bu-yRu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gQQ-oD-2pf" firstAttribute="top" secondItem="BQi-7I-0kk" secondAttribute="bottom" constant="8" id="4tR-cN-9Ws"/>
+                            <constraint firstItem="gQQ-oD-2pf" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" constant="28" id="6Rx-gz-V3m"/>
+                            <constraint firstItem="Uit-ed-1mN" firstAttribute="bottom" secondItem="IaY-GY-W93" secondAttribute="bottom" constant="46" id="D4o-7f-MLJ"/>
+                            <constraint firstItem="Uit-ed-1mN" firstAttribute="trailing" secondItem="1dC-Sf-kE6" secondAttribute="trailing" constant="20" id="Nxl-7V-akf"/>
+                            <constraint firstItem="IaY-GY-W93" firstAttribute="trailing" secondItem="Uit-ed-1mN" secondAttribute="trailing" id="PJY-Zm-2Ol"/>
+                            <constraint firstItem="1dC-Sf-kE6" firstAttribute="top" secondItem="Uit-ed-1mN" secondAttribute="top" constant="20" id="Pud-mF-b9R"/>
+                            <constraint firstItem="csu-9v-wlc" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" constant="20" id="Tlf-u3-Gq1"/>
+                            <constraint firstItem="BQi-7I-0kk" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" constant="28" id="UIH-r4-z3b"/>
+                            <constraint firstItem="csu-9v-wlc" firstAttribute="top" secondItem="1dC-Sf-kE6" secondAttribute="bottom" constant="20" id="W8F-el-ntJ"/>
+                            <constraint firstItem="Uit-ed-1mN" firstAttribute="trailing" secondItem="BQi-7I-0kk" secondAttribute="trailing" constant="274" id="nyH-Uw-bip"/>
+                            <constraint firstItem="1dC-Sf-kE6" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" constant="20" id="oe8-Ep-1aT"/>
+                            <constraint firstItem="BQi-7I-0kk" firstAttribute="top" secondItem="csu-9v-wlc" secondAttribute="bottom" constant="19" id="p11-yr-Wso"/>
+                            <constraint firstItem="Uit-ed-1mN" firstAttribute="trailing" secondItem="csu-9v-wlc" secondAttribute="trailing" constant="20" id="udg-ah-N6Q"/>
+                            <constraint firstItem="Uit-ed-1mN" firstAttribute="trailing" secondItem="gQQ-oD-2pf" secondAttribute="trailing" constant="271" id="vla-zS-ySf"/>
+                            <constraint firstItem="IaY-GY-W93" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" id="xl2-eC-Exe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uit-ed-1mN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="T82-Ug-QBQ"/>
+                    <navigationItem key="navigationItem" title="About This App" id="T82-Ug-QBQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3m-VE-X1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6709" y="882"/>
+            <point key="canvasLocation" x="6708.6956521739139" y="881.91964285714278"/>
         </scene>
         <!--Chat-->
         <scene sceneID="hju-ZM-d2F">
