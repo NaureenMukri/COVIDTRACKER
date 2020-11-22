@@ -6,9 +6,12 @@
 //  Copyright © 2020 Monash University. All rights reserved.
 //
 
+
 import UIKit
 
 class AddSymptomsTableViewController: UITableViewController {
+    
+    // Initialising the Variables
     
     let CELL_FEELING = "feelingCell"
     let CELL_SYMPTOM = "symptomCell"
@@ -94,10 +97,20 @@ class AddSymptomsTableViewController: UITableViewController {
             selectedSymptoms.append(selectedSymptom)
         }
         
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell!.isSelected
+        {
+            cell?.editingAccessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+        else {
+             cell?.editingAccessoryType = UITableViewCell.AccessoryType.none
+        }
+        
         
         
     }
 
+    // Function to save Symptoms
 
     @IBAction func saveSymptoms(_ sender: Any) {
         

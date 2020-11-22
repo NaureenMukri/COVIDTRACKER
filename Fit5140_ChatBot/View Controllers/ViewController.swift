@@ -10,11 +10,13 @@ import UIKit
 import AWSLex
 
 class ViewController: UIViewController, AWSLexInteractionDelegate, UITextFieldDelegate {
-    
+
     var interactionKit: AWSLexInteractionKit?
 
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,7 @@ class ViewController: UIViewController, AWSLexInteractionDelegate, UITextFieldDe
         setUpLex()
         
     }
+
     func setUpLex() {
         self.interactionKit = AWSLexInteractionKit.init(forKey: "chatConfig")
         self.interactionKit?.interactionDelegate = self

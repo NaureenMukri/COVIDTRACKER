@@ -10,6 +10,8 @@ import UIKit
 
 class SymptomTableViewController: UITableViewController, DatabaseListener {
     
+    // Initialising Variables for Symptoms
+    
     let CELL_SYMPTOM = "historyCell"
     
     var listenerType: ListenerType = .symptoms

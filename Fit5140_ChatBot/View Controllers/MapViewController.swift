@@ -6,37 +6,24 @@
 //  Copyright © 2020 Monash University. All rights reserved.
 //
 
+// This View Controller is used to display the visited locations added by the user as MKPointAnnotations.
+
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
-
+class MapViewController: UIViewController, CLLocationManagerDelegate, DatabaseListener {
+    
+    //initialising the required attributes
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var geofence: CLCircularRegion?
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
-    
-    var locationAnnotation: [LocationAnnotation] = []
+    var listenerType: ListenerType = .location
+    var geofence: CLCircularRegion?
+    var locationList: [Location] = []
     var databaseController: DatabaseProtocol?
     var locationController: LocationTableViewController?
-    
-    
-    func checkLocationServices()
-    {
-        if CLLocationManager.locationServicesEnabled(){
-            // setup location manager
-            setupLocationManager()
-            checkLocationAuthorisation()
-        }
-        else
-        {
-            // display alert letting the user know to turn on location services
-             
-        }
-    }
-    
     
     
     override func viewDidLoad() {
@@ -47,47 +34,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-        locationController?.getData()
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-         locationManager.requestWhenInUseAuthorization()
-         locationManager.startUpdatingLocation()
-       }
+    // Function to fetch all the locations stored in the Database [Firebase]
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        locationManager.stopUpdatingLocation()
+    // MARK:- Marking the Annotations
+    
+    func getAllMarkers() {
+        for location in locationList {
+            let locationAnnotation = MKPointAnnotation()
+            locationAnnotation.title = location.name
+            locationAnnotation.subtitle = location.date
+            locationAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.lat!, longitude: location.long!)
+           mapView.addAnnotation(locationAnnotation)
+           focusOn(annotation: locationAnnotation)
+        }
     }
-       
-    func focusOn(annotation: MKAnnotation) {
-        mapView.selectAnnotation(annotation, animated: true)
-        let zoomRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: regionInMeters,longitudinalMeters: regionInMeters)
-        mapView.setRegion(zoomRegion, animated: true)
-        
-    }
+    
+    //MARK:- Location Services
+    
+    // Map Location Services : Checks the Authorisation of Location Access by setting up the Location Manager
     
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    func centerOnUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
-        }
-    }
-
     
     func checkLocationAuthorisation() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             // Let user use the app
             mapView.showsUserLocation = true
-            centerOnUserLocation()
             locationManager.startUpdatingLocation()
             break
         case .denied:
@@ -107,36 +85,73 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        let alert = UIAlertController(title: "Movement Detected", message: "You have left \(region.identifier)", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    
+    func checkLocationServices()
+    {
+        if CLLocationManager.locationServicesEnabled(){
+            // setup location manager
+            setupLocationManager()
+            checkLocationAuthorisation()
+            getAllMarkers()
+        }
+        else
+        {
+            // display alert letting the user know to turn on location services
+             
+        }
     }
     
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        let alert = UIAlertController(title: "Movement Detected", message: "You have entered \(region.identifier)", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+    //MARK:- MAP VIEW
+    
+    // Map View : Setting the View of Annotations using MKPointAnnotation
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? LocationAnnotation else
-        {
-            return nil
-        }
-        var annotationView: MKAnnotationView
-        let locationAnnotationID = "locations"
-        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: locationAnnotationID) as? MKMarkerAnnotationView {
-            view.annotation = annotation
-            annotationView = view
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
         } else {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: locationAnnotationID)
-            annotationView.canShowCallout = true
-            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            annotationView.largeContentTitle = annotation.title
+            annotationView!.annotation = annotation
         }
+
         return annotationView
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+         super.viewDidAppear(animated)
+         locationManager.requestWhenInUseAuthorization()
+         locationManager.startUpdatingLocation()
+         databaseController?.addListener(listener: self)
+       }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        locationManager.stopUpdatingLocation()
+        databaseController?.removeListener(listener: self)
+    }
+       
+    
+    // Map View : Function to set the focus on the Annotation selected
+    
+    func focusOn(annotation: MKPointAnnotation) {
+        mapView.selectAnnotation(annotation, animated: true)
+        let zoomRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: regionInMeters,longitudinalMeters: regionInMeters)
+        mapView.setRegion(zoomRegion, animated: true)
         
+    }
+    
+    //MARK:- DATABASE LISTENER
+    
+    func onLocationChange(change: DatabaseChange, locations: [Location]) {
+        locationList = locations
+    }
+    
+    func onSymptomChange(change: DatabaseChange, symptoms: [Symptoms]) {
     }
  
 }

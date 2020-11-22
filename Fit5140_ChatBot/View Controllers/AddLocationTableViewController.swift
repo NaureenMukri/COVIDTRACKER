@@ -10,6 +10,7 @@ import UIKit
 
 class AddLocationTableViewController: UITableViewController {
     
+    //Initialising Variables
     
     let SECTION_LOCATION_DETAILS = 0
     let SECTION_VISIT = 1
@@ -64,6 +65,8 @@ class AddLocationTableViewController: UITableViewController {
         
         return 2
     }
+    
+    //MARK:- Save Location Function
 
     @IBAction func saveLocation(_ sender: Any) {
               

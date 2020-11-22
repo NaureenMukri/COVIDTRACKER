@@ -14,21 +14,21 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
 
     let CELL_LOCATION = "locationCell"
     
-    weak var mapViewController: MapViewController?
+    weak var mapViewController: MapViewController!
     var listenerType: ListenerType = .location
     var allLocations: [Location] = []
     var databaseController: DatabaseProtocol?
     var firebaseController: FirebaseController?
     
     
-    func getData() {
+    func getData() -> [LocationAnnotation] {
         let storedLocations = allLocations
             var annotations = [LocationAnnotation]()
             for storedLocation in storedLocations {
                 let newAnnotation = LocationAnnotation(id: storedLocation.id!, title: storedLocation.name!, subtitle: storedLocation.date!, lat: storedLocation.lat!, long: storedLocation.long!)
                 annotations.append(newAnnotation)
             }
-            mapViewController?.mapView.addAnnotations(annotations)
+        return annotations
     }
     
 
@@ -97,7 +97,10 @@ class LocationTableViewController: UITableViewController, DatabaseListener {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedLocation = self.allLocations[indexPath.row]
-        let locationAnnotation = LocationAnnotation(id: selectedLocation.id!, title: selectedLocation.name!, subtitle: selectedLocation.date!, lat: selectedLocation.lat!, long: selectedLocation.long!)
+        let locationAnnotation = MKPointAnnotation()
+        locationAnnotation.title = selectedLocation.name
+        locationAnnotation.subtitle = selectedLocation.date
+        locationAnnotation.coordinate = CLLocationCoordinate2D(latitude: selectedLocation.lat!, longitude: selectedLocation.long!)
         mapViewController?.mapView.addAnnotation(locationAnnotation)
         mapViewController?.focusOn(annotation: locationAnnotation)
     }

@@ -10,7 +10,7 @@
         <!--Landing View Controller-->
         <scene sceneID="Buu-Fi-OCh">
             <objects>
-                <viewController storyboardIdentifier="landingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2r7-V0-l8U" customClass="LandingViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="landingViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2r7-V0-l8U" customClass="LandingViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J1e-OT-18R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,17 @@
                                     <constraint firstItem="wIp-8z-4dH" firstAttribute="height" secondItem="etA-a7-tL1" secondAttribute="height" id="lNO-sV-ZTp"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-covid" highlightedImage="icon-covid" translatesAutoresizingMaskIntoConstraints="NO" id="dQI-CF-4fK">
+                                <rect key="frame" x="118" y="252" width="174" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COVID Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8y-Tq-sO5">
+                                <rect key="frame" x="118" y="402" width="178" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" red="0.10480013511012287" green="0.34824646745243337" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -51,6 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="GgZ-2R-HqZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ehT-jT-ieq"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="loginButton" destination="wIp-8z-4dH" id="wwd-AL-2TW"/>
                         <outlet property="signUpButton" destination="etA-a7-tL1" id="5Nq-Xo-7nz"/>
@@ -921,6 +933,7 @@
         <image name="Background" width="1280" height="1920"/>
         <image name="Image-1" width="238" height="250"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="icon-covid" width="1022" height="1022"/>
         <image name="images" width="225" height="225"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="mic.circle" catalog="system" width="128" height="121"/>
