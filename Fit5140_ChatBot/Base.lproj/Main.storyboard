@@ -40,6 +40,17 @@
                                     <constraint firstItem="wIp-8z-4dH" firstAttribute="height" secondItem="etA-a7-tL1" secondAttribute="height" id="lNO-sV-ZTp"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-covid" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-ND-4wb">
+                                <rect key="frame" x="87" y="248" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COVID Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XG-U4-Kve">
+                                <rect key="frame" x="118" y="431" width="178" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" red="0.10480013511012287" green="0.34824646745243337" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -71,12 +82,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XM4-SY-qQX">
                                 <rect key="frame" x="40" y="128" width="334" height="230.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zB4-gg-T1W">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zB4-gg-T1W">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1p6-dz-1wz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1p6-dz-1wz">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -129,12 +140,22 @@
         <scene sceneID="yBv-dK-wQQ">
             <objects>
                 <tabBarController storyboardIdentifier="landingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0K7-5x-GcL" customClass="TabMenuViewController" customModule="Fit5140_ChatBot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jk2-Yp-FVk">
+                    <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jk2-Yp-FVk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.72723040803108807" green="0.64544120426932972" blue="0.25958630931626681" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="TabMenu" destination="Jk2-Yp-FVk" id="Fgd-Te-APT"/>
                         <segue destination="hG0-td-9s0" kind="relationship" relationship="viewControllers" id="HNj-MM-VzB"/>
@@ -192,7 +213,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9C-Xr-wo5">
                                         <rect key="frame" x="0.0" y="350" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -235,6 +256,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="95l-Xg-buw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="oAv-mn-Ycc" kind="relationship" relationship="rootViewController" id="HqB-fb-BEj"/>
@@ -252,6 +276,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <sections>
                             <tableViewSection headerTitle="Location Details" id="4Bf-Fv-VLC">
                                 <cells>
@@ -466,6 +492,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="locationCell" editingAccessoryType="disclosureIndicator" textLabel="JyH-CD-3fU" detailTextLabel="ajO-Mf-3Zr" imageView="t69-sP-hIZ" style="IBUITableViewCellStyleValue1" id="yVz-f9-rrC">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
@@ -506,6 +535,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="My Locations" id="pS1-mt-JzD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pzI-hp-KJ3">
+                            <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="jyc-uc-anx" kind="show" id="rD6-iT-15g"/>
                             </connections>
@@ -530,6 +560,7 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="K0Q-Fj-6pA"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Locations" id="KFQ-bY-GPn"/>
@@ -566,9 +597,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="tintColor" red="0.72723040800000005" green="0.64544120429999996" blue="0.25958630929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="sectionIndexBackgroundColor" red="0.72723040800000005" green="0.64544120429999996" blue="0.25958630929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" editingAccessoryType="disclosureIndicator" textLabel="Yqr-ZC-pyz" detailTextLabel="duf-pw-DrY" style="IBUITableViewCellStyleValue1" id="Tdi-4s-wAf">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
@@ -605,6 +637,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="My Record History" id="MtY-fU-itI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WJI-ac-82N">
+                            <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="Wwg-gC-cAS" kind="show" id="lgJ-aR-X0C"/>
                             </connections>
@@ -623,6 +656,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedFeelingCell" textLabel="tgo-zV-8iM" detailTextLabel="vi0-ud-wMs" style="IBUITableViewCellStyleValue1" id="FL2-DJ-hqF">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
@@ -703,6 +738,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="J0F-7L-27e">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="JJ4-eB-juF">
+                            <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveSymptoms:" destination="Wwg-gC-cAS" id="KnR-ok-Nbc"/>
                             </connections>
@@ -713,11 +749,11 @@
             </objects>
             <point key="canvasLocation" x="6102.898550724638" y="1915.8482142857142"/>
         </scene>
-        <!--Profile-->
+        <!--About Us-->
         <scene sceneID="rHw-fr-jtU">
             <objects>
                 <navigationController id="hG0-td-9s0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="Q9d-MB-2Fy"/>
+                    <tabBarItem key="tabBarItem" title="About Us" image="person" catalog="system" selectedImage="person" id="Q9d-MB-2Fy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ERi-RS-M8R">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -740,13 +776,13 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-Sf-kE6">
                                 <rect key="frame" x="20" y="108" width="374" height="381"/>
-                                <color key="backgroundColor" red="0.37569138407707214" green="0.86399048566818237" blue="0.84308594465255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="381" id="bGG-O4-Ips"/>
                                 </constraints>
-                                <mutableString key="text">The application is named “COVID Tracker” and it will help the users keep track of their physical, mental and emotional state – providing self-tracking ability to do so.  This application combines the voice-enabled ability of AI assistant along with the capture and storage of symptoms, moods and locations of a person. This is an all-inclusive app customised to help users tackle the current coronavirus situation.
-It makes the experience of tracking more human-like and easier by incorporating a conversation with the voice assistant. Also, tracking makes it easier for the user to know how he/she is feeling at a definite time and helps to improve the overall mental health of the user.</mutableString>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <string key="text">The application is named “COVID Tracker” and it will help the users keep track of their physical, mental and emotional state – providing self-tracking ability to do so.  This application combines the voice-enabled ability of AI assistant along with the capture and storage of symptoms, moods and locations of a person. This is an all-inclusive app customised to help users tackle the current coronavirus situation.
+It makes the experience of tracking more human-like and easier by incorporating a conversation with the voice assistant. Also, tracking makes it easier for the user to know how he/she is feeling at a definite time and helps to improve the overall mental health of the user.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -784,6 +820,7 @@ It makes the experience of tracking more human-like and easier by incorporating 
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="gQQ-oD-2pf" firstAttribute="top" secondItem="BQi-7I-0kk" secondAttribute="bottom" constant="8" id="4tR-cN-9Ws"/>
                             <constraint firstItem="gQQ-oD-2pf" firstAttribute="leading" secondItem="Uit-ed-1mN" secondAttribute="leading" constant="28" id="6Rx-gz-V3m"/>
@@ -817,6 +854,9 @@ It makes the experience of tracking more human-like and easier by incorporating 
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kEw-fa-Y50">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aUN-AA-PAG"/>
@@ -906,6 +946,7 @@ It makes the experience of tracking more human-like and easier by incorporating 
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtj-HM-Z9a" secondAttribute="trailing" constant="20" id="0eF-yf-qPd"/>
                             <constraint firstItem="z6G-vU-1MT" firstAttribute="top" secondItem="b2d-im-uf2" secondAttribute="bottom" constant="20" id="25r-WW-vTu"/>
@@ -1020,6 +1061,9 @@ It makes the experience of tracking more human-like and easier by incorporating 
                         <viewLayoutGuide key="safeArea" id="c9q-kg-Sqb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="bYW-fi-fKF"/>
+                    <connections>
+                        <outlet property="dhhsWebsiteLink" destination="kY4-lO-Aeb" id="x9u-Lg-Rh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stX-a5-CjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1035,6 +1079,9 @@ It makes the experience of tracking more human-like and easier by incorporating 
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bPH-Ub-hNN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="9No-DO-UZW" kind="relationship" relationship="rootViewController" id="uCo-4X-T8z"/>
@@ -1045,10 +1092,12 @@ It makes the experience of tracking more human-like and easier by incorporating 
             <point key="canvasLocation" x="3991" y="-559"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.1048001351" green="0.34824646749999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="238-2381618_sad-face-transparent-clipart-png-download-arturia-icon" width="860" height="710"/>
         <image name="Image-4" width="639" height="757"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="icon-covid" width="1022" height="1022"/>
         <image name="images" width="225" height="225"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="mic.circle" catalog="system" width="128" height="121"/>
